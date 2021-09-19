@@ -262,9 +262,7 @@ x != y
 
 
 
-
 ---------UNIDAD 4---------
-
 
 
 
@@ -305,9 +303,7 @@ howeq4 x y z w
 
 
 
-
 ------RECURSION------
-
 
 
 --FACTORIAL
@@ -370,6 +366,7 @@ multsum x y
 
 ---------SIN TERMINAR---------
 
+
 --p08 RAIZ CUADRADA ENTERA DE UN NUMERO POSITIVO
 --EJEMPLO RAIZ DE 15 = 3 Y 16 = 4
 introot :: Int -> Int
@@ -385,7 +382,9 @@ maxfun f n
 	|(n == 0) = f 0
 	|(n > 0) = maxfun f (n-1) + f n
 
+
 ---------SIN TERMINAR---------
+
 
 --p12 NUMERO MAXIMO DE REGIONES
 regmax2 :: Int -> Int
@@ -412,21 +411,20 @@ divi m n
 	|(m < n) = 0
 	|otherwise = 1 + divi (m-n) n
 
+
 ---------SIN TERMINAR---------
+
 
 --p13 NUMERO MAXIMO DE FACTOR
 --maxfactor :: Int -> Int -> Int
 --maxfactor n
 --	|
 
+
 ---------SIN TERMINAR---------
 
 
-
-
 ---------UNIDAD 5---------
-
-
 
 
 {-
@@ -499,6 +497,7 @@ medio x y z
 
 
 ---------SIN TERMINAR---------
+
 
 --p02 ORDENAR DE FORMA ASCENDENTE
 --ord3 :: (Int,Int,Int) -> (Int,Int,Int)
@@ -577,3 +576,33 @@ primo2 n
 	| divisores (abs n) == [1,abs n] = True
 	|n == 1 = True
 	|otherwise = False
+	
+--POTENCIA DE 2
+pot2 :: Int -> Int
+pot2 n
+	|(n == 0) = 1
+	|(n > 0) = 2 * pot2 (n-1)
+
+--SUMA FACTORIALES
+sumfac :: Int -> Int
+sumfac n
+	|(n == 0) = 1
+--	|(n > 0) = sumfac (n-1) + fac n
+
+--SUMA FUNCIONES
+sumfun :: (Int -> Int) -> Int -> Int
+sumfun f n
+	|(n == 0) = f 0
+	|(n > 0) = sumfun f (n-1) + f n
+
+--NUMERO MAXIMO DE REGIONES
+regmax :: Int -> Int
+regmax n
+	|(n == 0) = 1
+	|(n > 0) = regmax (n-1) + n
+
+--p07 MULTIPLICA SUMATORIAMENTE
+multsum :: Int -> Int -> Int
+multsum x y
+	|(x == 0) || (y == 0) = 0
+	|(y > 0) = (multsum x (y-1)) + x
